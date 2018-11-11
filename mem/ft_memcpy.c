@@ -1,29 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnew.c                                        :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: artprevo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/09 17:24:43 by artprevo          #+#    #+#             */
-/*   Updated: 2018/11/11 18:10:12 by artprevo         ###   ########.fr       */
+/*   Created: 2018/11/11 17:38:05 by artprevo          #+#    #+#             */
+/*   Updated: 2018/11/11 17:51:46 by artprevo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnew(size_t size)
+void	*ft_memcpy(void *restrict dst, const void *restrict src, size_t n)
 {
-	char	*str;
-	size_t	i;
+	unsigned char *ptr1;
+	unsigned char *ptr2;
 
-	i = 0;
-	if (!(str = (char *)malloc(sizeof(char) * size)))
-		return (0);
-	while (str[i])
-	{
-		str[i] = '\0';
-		i++;
-	}
-	return (str);
+	if (dst == src || n == 0)
+		return (dst);
+	ptr1 = (unsigned char*)dst;
+	ptr2 = (unsigned char*)src;
+	while (n--)
+		*ptr1++ = *ptr2++;
+	return (dst);
 }

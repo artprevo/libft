@@ -6,19 +6,20 @@
 /*   By: artprevo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/11 14:51:49 by artprevo          #+#    #+#             */
-/*   Updated: 2018/11/11 15:54:15 by artprevo         ###   ########.fr       */
+/*   Updated: 2018/11/11 18:09:56 by artprevo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_new(char const *s, char c, int i)
+char	*ft_new(char const *s, char c, size_t i)
 {
-	int		j;
-	int		k;
-	char	*str;
+	size_t		j;
+	size_t		k;
+	char		*str;
 
 	k = 0;
+	str = 0;
 	while (s[i])
 	{
 		if (s[i - 1] == c)
@@ -40,8 +41,8 @@ char	*ft_new(char const *s, char c, int i)
 
 int		ft_count(char const *s, char c)
 {
-	int i;
-	int j;
+	size_t i;
+	size_t j;
 
 	i = 0;
 	j = 0;
@@ -60,8 +61,8 @@ int		ft_count(char const *s, char c)
 
 char	**ft_strsplit(char const *s, char c)
 {
-	int		i;
-	int		j;
+	size_t		i;
+	size_t		j;
 	char	**tab;
 
 	i = 0;

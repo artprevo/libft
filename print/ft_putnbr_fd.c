@@ -1,29 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnew.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: artprevo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/09 17:24:43 by artprevo          #+#    #+#             */
-/*   Updated: 2018/11/11 18:10:12 by artprevo         ###   ########.fr       */
+/*   Created: 2018/11/11 16:57:19 by artprevo          #+#    #+#             */
+/*   Updated: 2018/11/11 17:52:13 by artprevo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnew(size_t size)
+void	ft_putnbr(int n)
 {
-	char	*str;
-	size_t	i;
-
-	i = 0;
-	if (!(str = (char *)malloc(sizeof(char) * size)))
-		return (0);
-	while (str[i])
+	if (n == -2147483648)
 	{
-		str[i] = '\0';
-		i++;
+		ft_putchar_fd('-');
+		ft_putchar_fd('2');
+		ft_putnbr_fd(14748364);
+		n = 8;
 	}
-	return (str);
+	if (n < 0)
+	{
+		ft_putchar_fd('-');
+		n = -n;
+	}
+	if (n > 9)
+		ft_putnbr_fd(n/10);
+	ft_putchar_fd(n % 10 + 48);
 }

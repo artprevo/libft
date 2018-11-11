@@ -1,29 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnew.c                                        :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: artprevo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/09 17:24:43 by artprevo          #+#    #+#             */
-/*   Updated: 2018/11/11 18:10:12 by artprevo         ###   ########.fr       */
+/*   Created: 2018/11/11 17:49:54 by artprevo          #+#    #+#             */
+/*   Updated: 2018/11/11 17:54:17 by artprevo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnew(size_t size)
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	char	*str;
-	size_t	i;
+	unsigned char *ptr1;
+	unsigned char *ptr2;
 
-	i = 0;
-	if (!(str = (char *)malloc(sizeof(char) * size)))
-		return (0);
-	while (str[i])
-	{
-		str[i] = '\0';
-		i++;
-	}
-	return (str);
+	ptr1 = (unsigned char*)dst;
+	ptr2 = (unsigned char*)src;
+	while (len--)
+		*ptr2++ = *ptr1++;
+	return (dst);
 }
