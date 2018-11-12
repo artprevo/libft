@@ -6,7 +6,7 @@
 /*   By: artprevo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/09 16:19:45 by artprevo          #+#    #+#             */
-/*   Updated: 2018/11/09 16:53:24 by artprevo         ###   ########.fr       */
+/*   Updated: 2018/11/12 22:48:46 by artprevo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,17 @@
 
 #define S str[i]
 
-int	atoi(const char *str)
+int	ft_atoi(const char *str)
 {
-	int i;
+	int	i;
 	int	result;
 	int neg;
 
 	i = 0;
 	result = 0;
-	neg = 0;
-	while (S && (S == '\t' || S == '\n' || S == '\r' || S == '\v' || S == '\f'))
+	neg = 1;
+	while (S && (S == '\t' || S == '\n' || S == '\r' || S == '\v' || S == '\f'
+		|| S == ' '))
 		i++;
 	if (S == '+' || S == '-')
 	{

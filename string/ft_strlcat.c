@@ -6,17 +6,19 @@
 /*   By: artprevo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/09 18:55:23 by artprevo          #+#    #+#             */
-/*   Updated: 2018/11/11 17:31:23 by artprevo         ###   ########.fr       */
+/*   Updated: 2018/11/12 21:57:31 by artprevo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char * restrict dst, const char * restrict src, size_t size)
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
 	size_t i;
 	size_t j;
 
+	if (size == 0)
+		return (0);
 	i = 0;
 	while (dst[i] && i < size)
 		i++;

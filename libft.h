@@ -6,7 +6,7 @@
 /*   By: artprevo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/09 14:14:30 by artprevo          #+#    #+#             */
-/*   Updated: 2018/11/11 18:03:44 by artprevo         ###   ########.fr       */
+/*   Updated: 2018/11/12 19:54:35 by artprevo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,9 @@ int					ft_isascii(int c);
 int					ft_isprint(int c);
 int					ft_tolower(int c);
 int					ft_toupper(int c);
+
+static	int			ft_count(char const *s, char c);
+static char 		*ft_new(char const *s, char c, size_t i);
 
 void				*ft_memset(void *b, int c, size_t n);
 void				ft_bzero(void *s, size_t n);

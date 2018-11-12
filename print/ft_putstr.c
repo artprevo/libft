@@ -6,7 +6,7 @@
 /*   By: artprevo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/11 16:55:21 by artprevo          #+#    #+#             */
-/*   Updated: 2018/11/11 16:56:15 by artprevo         ###   ########.fr       */
+/*   Updated: 2018/11/12 19:58:51 by artprevo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ void	ft_putstr(char const *s)
 {
 	int i;
 
+	i = 0;
 	while (s[i])
 	{
 		ft_putchar(s[i]);

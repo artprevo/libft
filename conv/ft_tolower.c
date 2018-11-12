@@ -6,13 +6,15 @@
 /*   By: artprevo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/09 16:28:11 by artprevo          #+#    #+#             */
-/*   Updated: 2018/11/09 16:28:49 by artprevo         ###   ########.fr       */
+/*   Updated: 2018/11/12 22:41:55 by artprevo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 int	ft_tolower(int c)
 {
-	if (c >= 97 && c <= 122)
-		return (c);
-	return (c - 32);
+	if (c >= 65 && c <= 90)
+		return (c + 32);
+	return (c);
 }

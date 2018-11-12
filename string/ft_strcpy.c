@@ -6,7 +6,7 @@
 /*   By: artprevo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/09 14:09:27 by artprevo          #+#    #+#             */
-/*   Updated: 2018/11/09 16:46:10 by artprevo         ###   ########.fr       */
+/*   Updated: 2018/11/12 22:50:13 by artprevo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,9 @@ char	*ft_strcpy(char *dst, const char *src)
 {
 	size_t i;
 
-	i = 0;
-	while (src[i])
-	{
-		dst[i] = src[i];
-		i++;
-	}
-	return (dst);
+	i = ft_strlen(src);
+	while (*src != '\0')
+		*dst++ = *src++;
+	*dst = '\0';
+	return (dst - i);
 }

@@ -6,13 +6,13 @@
 /*   By: artprevo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/11 14:51:49 by artprevo          #+#    #+#             */
-/*   Updated: 2018/11/11 18:09:56 by artprevo         ###   ########.fr       */
+/*   Updated: 2018/11/12 22:32:32 by artprevo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_new(char const *s, char c, size_t i)
+static char	*ft_new(char const *s, char c, size_t i)
 {
 	size_t		j;
 	size_t		k;
@@ -39,7 +39,7 @@ char	*ft_new(char const *s, char c, size_t i)
 	return (str);
 }
 
-int		ft_count(char const *s, char c)
+static int		ft_count(char const *s, char c)
 {
 	size_t i;
 	size_t j;
