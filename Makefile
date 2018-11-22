@@ -6,28 +6,89 @@
 #    By: artprevo <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/07 00:20:03 by artprevo          #+#    #+#              #
-#    Updated: 2018/11/11 18:16:52 by artprevo         ###   ########.fr        #
+#    Updated: 2018/11/22 19:25:18 by artprevo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
+C = gcc
+
+FLAGS = -Wall -Wextra -Werror
+
+SRC/M = ft_memccpy.c     \
+	ft_memmove.c     \
+	ft_memchr.c      \
+	ft_memcpy.c      \
+	ft_memset.c		 \
+	ft_memcmp.c		\
+	ft_memalloc.c	\
+	ft_memdel.c		
+
+SRC/O = ft_atoi.c        \
+	ft_bzero.c        \
+	ft_tolower.c    \
+	ft_toupper.c	\
+	ft_itoa.c
+
+SRC/I = ft_isalnum.c    \
+	ft_isalpha.c    \
+	ft_isascii.c    \
+	ft_isdigit.c    \
+	ft_isprint.c
+
+SRC/P = ft_putchar.c    \
+	ft_putstr.c        \
+	ft_putendl.c    \
+	ft_putnbr.c		\
+	ft_putchar_fd.c	\
+	ft_putstr_fd.c	\
+	ft_putendl_fd.c	\
+	ft_putnbr_fd.c	
+
+SRC/S = ft_strlen.c        \
+	ft_strdup.c        \
+	ft_strcpy.c        \
+	ft_strncpy.c    \
+	ft_strcat.c        \
+	ft_strncat.c    \
+	ft_strlcat.c    \
+	ft_strstr.c        \
+	ft_strnstr.c    \
+	ft_strchr.c        \
+	ft_strrchr.c    \
+	ft_strcmp.c        \
+	ft_strncmp.c    \
+	ft_strequ.c        \
+	ft_strnequ.c    \
+	ft_strmap.c        \
+	ft_strmapi.c    \
+	ft_striter.c    \
+	ft_striteri.c    \
+	ft_strnew.c        \
+	ft_strdel.c        \
+	ft_strclr.c		\
+	ft_strsub.c		\
+	ft_strjoin.c		\
+	ft_strtrim.c		\
+	ft_strsplit.c	
+
+INC = libft.h
+SRC = $(SRC/P) $(SRC/O) $(SRC/I) $(SRC/S) $(SRC/M)
+OBJ = $(SRC:.c=.o)
 NAME = libft.a
 
-HEADER = ./includes/
-FLAG = -Wall -Wextra -Werror
-OPTION = -c -I $(HEADER)
-SRC = ./string/*.c ./conv/*.c ./mem/*.c ./print/*.c
-OBJ = ./*.o
+all : $(NAME)
 
-all: $(NAME)
+$(NAME) : $(OBJ)
+	ar rc $(NAME) $(OBJ)
+	ranlib $(NAME)
 
-$(NAME) : 
-		gcc $(FLAG) $(OPTION) $(SRC)
-		ar rc $(NAME) $(OBJ)
+$(OBJ) :
+	$(CC) $(FLAGS) -c $(SRC)
 
-clean:
-		/bin/rm -f $(OBJ)
+clean :
+	rm -rf *.o
 
-fclean: clean
-		/bin/rm -f $(NAME)
+fclean : clean
+	rm -rf $(NAME)
 
-re: fclean all
+re : fclean all
